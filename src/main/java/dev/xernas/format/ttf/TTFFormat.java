@@ -231,6 +231,12 @@ public class TTFFormat implements IFileFormat {
         return headTable != null && maximumProfileTable != null && locationTable != null && glyphTable != null && nameTable != null && characterMappingTable != null && characterMappingTable.hasMappings();
     }
 
+    public GlyphTable.Glyph glyphForChar(Character character) {
+        int glyphIndex = characterMappingTable.charToGlyph(character);
+        if (glyphIndex < 0 || glyphIndex >= glyphTable.glyphs().size()) return null;
+        return glyphTable.glyphs().get(glyphIndex);
+    }
+
     public List<GlyphTable.Glyph> strToGlyphs(String text) {
         List<Integer> glyphIndices = characterMappingTable.stringToGlyphs(text);
         List<GlyphTable.Glyph> glyphs = new ArrayList<>();

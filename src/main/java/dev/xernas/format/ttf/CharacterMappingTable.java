@@ -105,6 +105,10 @@ public class CharacterMappingTable {
         };
     }
 
+    public int charToGlyph(Character character) {
+        return mapCharToGlyph(character);
+    }
+
     public List<Integer> stringToGlyphs(String text) {
         List<Integer> glyphs = new ArrayList<>();
         for (int i = 0; i < text.length(); i++) {
