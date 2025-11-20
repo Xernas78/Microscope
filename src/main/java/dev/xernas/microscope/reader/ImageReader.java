@@ -1,4 +1,4 @@
-package dev.xernas;
+package dev.xernas.microscope.reader;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

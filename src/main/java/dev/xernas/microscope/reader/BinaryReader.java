@@ -1,4 +1,4 @@
-package dev.xernas.reader;
+package dev.xernas.microscope.reader;
 
 import java.io.FileInputStream;
 import java.io.IOException;
