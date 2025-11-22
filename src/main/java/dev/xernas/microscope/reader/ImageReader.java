@@ -23,7 +23,7 @@ public class ImageReader implements AutoCloseable{
         int[] pixelsRaw = new int[width * height];
         image.getRGB(0, 0, width, height, pixelsRaw, 0, width);
 
-        ByteBuffer pixels = ByteBuffer.allocate(width * height * Integer.BYTES);
+        ByteBuffer pixels = ByteBuffer.allocateDirect(width * height * Integer.BYTES);
         for (int i = 0; i < width * height; i++) {
             int pixel = pixelsRaw[i];
             pixels.put((byte) ((pixel >> 16) & 0xFF)); // Red
